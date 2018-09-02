@@ -1,0 +1,34 @@
+
+Android笔记—编译LineageOS源码
+	https://www.colabug.com/3806949.html
+	
+TheMuppets各机型需要文件
+	https://github.com/TheMuppets/proprietary_vendor_xiaomi
+
+
+错误：
+	ninja: error: '/.txt', needed by '******/out/target/common/obj/PACKAGING/checkpublicapi-cm-last-timestamp', missing and no known rule to make it
+		https://www.reddit.com/r/LineageOS/comments/741fwx/checkpublicapicmlasttimestamp_needs_missing_txt/
+		
+		设置关闭WITHOUT_CHECK_API
+		
+		1、build/target/board/generic/BoardConfig.mk中添加WITHOUT_CHECK_API=false
+		2、export WITHOUT_CHECK_API=false(未验证)
+		
+		
+添加su
+	export WITH_SU=true
+	
+	
+关闭jack编译
+	export ANDROID_COMPILE_WITH_JACK=false
+	
+	
+设置 ccache 提高编译效率
+	sudo apt install ccache -y
+	echo export USE_CCACHE=1 >> ~/.bashrc
+	prebuilts/misc/linux-x86/ccache/ccache -M 50G
+	
+	
+
+
