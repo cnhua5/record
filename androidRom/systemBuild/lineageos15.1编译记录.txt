@@ -16,6 +16,11 @@ TheMuppets各机型需要文件
 		2、export WITHOUT_CHECK_API=false(未验证)
 		
 		
+		
+	ninja: fatal: ninja version (1.5.1) incompatible with build file ninja_required_version version (1.7.0).
+		https://github.com/ninja-build/ninja/releases 下载替换whereis ninja
+		
+		
 添加su
 	export WITH_SU=true
 	
@@ -30,5 +35,16 @@ TheMuppets各机型需要文件
 	prebuilts/misc/linux-x86/ccache/ccache -M 50G
 	
 	
-
+模块编译
+	# lunch aosp_arm64-eng//查看选项
+	# ln -s out/combined-aosp_arm64.ninja build.ninja
+	# ninja Settings
+	
+	
+	mgrep -w LOCAL_MODULE 查找module
+	
+	ninja -f out/combined-lineage_gemini.ninja services
+		ninja: error: /home/letang/android/lineageos15.1/out/soong/build.ninja:2737786: multiple outputs aren't (yet?) supported by depslog; bring this up on the mailing list if it affects you
+	
+	
 
