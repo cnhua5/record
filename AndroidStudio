@@ -1,0 +1,8 @@
+编译Err: Unable to find a matching configuration of project :
+  解决:
+    https://stackoverflow.com/questions/44218614/gradle-4-0-unable-to-find-a-matching-configuration
+    
+    Replace:
+    implementation project(':abChat')
+    To:
+    implementation project(path:':abChat', configuration: 'default')
