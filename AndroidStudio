@@ -1,4 +1,7 @@
 编译Err: Unable to find a matching configuration of project :
+  
+  原因:应用module中没有自定义编译选项,导致错误
+  
   解决:
     https://stackoverflow.com/questions/44218614/gradle-4-0-unable-to-find-a-matching-configuration
     
